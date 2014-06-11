@@ -8,6 +8,7 @@ describe("Index", function () {
     superagent.get("http://localhost:3000/")
       .end(function (e, res) {
         (e === null).should.equal(true);
+        console.log('res.text: ' + res.text);
         res.text.should.equal("Hey buddy!");
         done();
       });
@@ -19,8 +20,9 @@ describe("Persistence", function () {
     superagent.get("http://localhost:3000/doobie")
       .end(function (e, res) {
         (e === null).should.equal(true);
-        var response = (res.body.indexOf("new") !== -1);
-        expect(response).to.equal(false);
+        console.log('indexOf:::: ' + res.text.indexOf('new'));
+        var response = (res.text.indexOf("new") !== -1);
+        expect(response).to.equal(true);
         done();
       });
   });
@@ -29,7 +31,7 @@ describe("Persistence", function () {
       .end(function (e, res) {
         (e === null).should.equal(true);
         var response = res.body;
-        response = response[0];
+        console.log('response BODY: ' + res.text[2]);
         response.should.have.property("name", "doobie");
         done();
       });
