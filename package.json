@@ -1,21 +1,21 @@
 {
-  "name": "sample_node_mongo",
+  "name": "sample-node-couchdb",
   "version": "0.0.0",
-  "description": "Testing MongoDB service",
+  "description": "Testing CouchDB service",
   "main": "index.js",
   "scripts": {
     "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:tmlbl/sample_node_mongo.git"
+    "url": "git@github.com:OneRedOak/sample-node-couchdb.git"
   },
   "author": "Tim Lebel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tmlbl/sample_node_mongo/issues"
+    "url": "https://github.com/OneRedOak/sample-node-couchdb/issues"
   },
-  "homepage": "https://github.com/tmlbl/sample_node_mongo",
+  "homepage": "https://github.com/OneRedOak/sample-node-couchdb",
   "dependencies": {
     "express": "^4.2.0",
     "nano": "^5.10.0",
