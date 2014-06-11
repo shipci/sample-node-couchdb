@@ -37,4 +37,6 @@ app.get("/:name", function (req, res) {
   });
 });
 
-app.listen(3000);
+app.listen(3000, function () {
+  console.log('Express listening on port 3000');
+});
