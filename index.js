@@ -1,35 +1,24 @@
 var express = require("express"),
-    mongoose = require("mongoose"),
+    nano = require('nano')('http://localhost:5984'),
+    db   = nano.use('test'),
     app = express();
-
-mongoose.connect("mongodb://localhost/test", function (err) {
-  if (!err) {
-    console.log("Connected to MongoDB");
-  } else {
-    console.error(err);
-  }
-});
 
 app.get("/", function (req, res) {
   res.send("Hey buddy!");
 });
 
-var Thing = require("./model");
-
 app.get("/:name", function (req, res) {
-  Thing.find({ name: req.params.name }, function (err, t) {
-    if (t.length < 1) {
-      var thing = new Thing();
-      thing.name = req.params.name;
-      thing.save(function(err) {
+  db.get(req.params.name, {}, function (err, body) {
+    if (body.length < 1) {
+      db.insert({name: req.params.name}, req.params.name, function(err, b) {
         if (err) {
           res.send(500);
         } else {
-          res.send("Created a new thing with name " + thing.name);
+          res.send("Created a new thing with name " + req.params.name);
         }
       });
     } else {
-      res.send(t);
+      res.send(body);
     }
   });
 });

@@ -5,9 +5,9 @@ language: node_js
 node_js:
   - 0.10.25
 
-# Mongo binds to 127.0.0.1 by default
+# CouchDB binds to 127.0.0.1 by default
 services:
-  - mongodb
+  - couchdb
 
 # The path for Xunit to output test reports
 env:
