@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:OneRedOak/sample-node-couchdb.git"
+    "url": "git@github.com:Shippable/sample-node-couchdb.git"
   },
   "author": "Tim Lebel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OneRedOak/sample-node-couchdb/issues"
+    "url": "https://github.com/Shippable/sample-node-couchdb/issues"
   },
-  "homepage": "https://github.com/OneRedOak/sample-node-couchdb",
+  "homepage": "https://github.com/Shippable/sample-node-couchdb",
   "dependencies": {
     "express": "^4.2.0",
     "nano": "^5.10.0",
